@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Bonne Cuisine - Menu</title>
+    <style>
+        :root {
+            --gold: #c5a059;
+            --dark: #1a1a1a;
+            --light: #f9f9f9;
+        }
+
+        body {
+            font-family: 'Playfair Display', serif;
+            background-color: var(--light);
+            color: var(--dark);
+            margin: 0;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 0;
+            border-bottom: 2px solid var(--gold);
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            letter-spacing: 2px;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--gold);
+            font-size: 2rem;
+            margin: 40px 0 20px;
+            text-transform: uppercase;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .menu-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            height: 300px;
+            cursor: pointer;
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .menu-item:hover .overlay {
+            opacity: 1;
+        }
+
+        .menu-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .item-name {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: rgba(26, 26, 26, 0.8);
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            transition: opacity 0.3s ease;
+        }
+
+        .menu-item:hover .item-name {
+            opacity: 0;
+        }
+
+        .ingredients {
+            font-size: 0.9rem;
+            font-style: italic;
+            margin-top: 10px;
+            color: var(--gold);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>LA BONNE CUISINE</h1>
+    <p>Authentic French Gastronomy</p>
+</header>
+
+<h2 class="section-title">Entrées</h2>
+<div class="menu-grid">
+    <div class="menu-item">
+        <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?q=80&w=500" alt="Soupe à l'oignon">
+        <div class="item-name">Soupe à l'oignon</div>
+        <div class="overlay">
+            <h3>Soupe à l'oignon</h3>
+            <p class="ingredients">Caramelized onions, beef broth, Gruyère cheese, and crusty bread croutons.</p>
+        </div>
+    </div>
+    <div class="menu-item">
+        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=500" alt="Salade Niçoise">
+        <div class="item-name">Salade Niçoise</div>
+        <div class="overlay">
+            <h3>Salade Niçoise</h3>
+            <p class="ingredients">Fresh tuna, green beans, hard-boiled eggs, tomatoes, olives, and anchovies.</p>
+        </div>
+    </div>
+    <div class="menu-item">
+        <img src="https://images.unsplash.com/photo-1620574387735-3624d75b2dbc?q=80&w=500" alt="Quiche Lorraine">
+        <div class="item-name">Quiche Lorraine</div>
+        <div class="overlay">
+            <h3>Quiche Lorraine</h3>
+            <p class="ingredients">Salty bacon (lardons), heavy cream, eggs, and a hint of nutmeg in a buttery crust.</p>
+        </div>
+    </div>
+</div>
+
+<h2 class="section-title">Main Courses</h2>
+<div class="menu-grid">
+    <div class="menu-item">
+        <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?q=80&w=500" alt="Coq au Vin">
+        <div class="item-name">Coq au Vin</div>
+        <div class="overlay">
+            <h3>Coq au Vin</h3>
+            <p class="ingredients">Chicken braised with red wine, mushrooms, salt pork, and garlic.</p>
+        </div>
+    </div>
+    <div class="menu-item">
+        <img src="https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?q=80&w=500" alt="Boeuf Bourguignon">
+        <div class="item-name">Boeuf Bourguignon</div>
+        <div class="overlay">
+            <h3>Boeuf Bourguignon</h3>
+            <p class="ingredients">Beef stew braised in red Burgundy wine, beef stock, carrots, and onions.</p>
+        </div>
+    </div>
+    <div class="menu-item">
+        <img src="https://images.unsplash.com/photo-1572453800999-e8d2d1589b7c?q=80&w=500" alt="Ratatouille">
+        <div class="item-name">Ratatouille</div>
+        <div class="overlay">
+            <h3>Ratatouille</h3>
+            <p class="ingredients">Stewed vegetables: eggplant, zucchini, peppers, tomatoes, and Provencal herbs.</p>
+        </div>
+    </div>
+</div>
+
+<h2 class="section-title">Sides</h2>
+<div class="menu-grid">
+    <div class="menu-item">
+        <img src="https://images.unsplash.com/photo-1552767059-ce182ead6c1b?q=80&w=500" alt="Gratin Dauphinois">
+        <div class="item-name">Gratin Dauphinois</div>
+        <div class="overlay">
+            <h3>Gratin Dauphinois</h3>
+            <p class="ingredients">Sliced potatoes baked with cream, garlic, and butter.</p>
+        </div>
+    </div>
+</div>
+
+<h2 class="section-title">Desserts</h2>
+<div class="menu-grid">
+    <div class="menu-item">
+        <img src="https://images.unsplash.com/photo-1470124182917-cc6e71b22ecc?q=80&w=500" alt="Crème brûlée">
+        <div class="item-name">Crème brûlée</div>
+        <div class="overlay">
+            <h3>Crème brûlée</h3>
+            <p class="ingredients">Rich custard base topped with a layer of hardened caramelized sugar.</p>
+        </div>
+    </div>
+    <div class="menu-item">
+        <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?q=80&w=500" alt="Macarons">
+        <div class="item-name">Macarons</div>
+        <div class="overlay">
+            <h3>Macarons</h3>
+            <p class="ingredients">Sweet meringue-based confection made with almond flour and ganache filling.</p>
+        </div>
+    </div>
+</div>
+
+<h2 class="section-title">Drinks</h2>
+<div class="menu-grid">
+    <div class="menu-item">
+        <img src="https://french-wine-thailand.com/wp-content/uploads/2021/09/All-about-red-wine.jpg" alt="French Wine">
+        <div class="item-name">French red and white wine</div>
+        <div class="overlay">
+            <h3>French Wine</h3>
+            <p class="ingredients">A curated selection from the finest Bordeaux and Burgundy regions.</p>
+        </div>
+    </div>
+    <div class="menu-item">
+        <img src="https://alcornoque.mx/cdn/shop/articles/bollinger.jpg?v=1736370871" alt="Champagne">
+        <div class="item-name">Champagne</div>
+        <div class="overlay">
+            <h3>Champagne</h3>
+            <p class="ingredients">Classic sparkling wine, perfect for celebrations.</p>
+        </div>
+    </div>
+    <div class="menu-item">
+        <img src="https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?q=80&w=500" alt="Espresso">
+        <div class="item-name">Espresso / Café au lait</div>
+        <div class="overlay">
+            <h3>Coffee</h3>
+            <p class="ingredients">Freshly brewed espresso or a classic café au lait.</p>
+        </div>
+    </div>
+    <div class="menu-item">
+        <img src="https://quench.culligan.com/wp-content/uploads/2022/04/6-Mineral-Water-Benefits-To-Consider.jpg?w=1024" alt="Mineral Water">
+        <div class="item-name">Mineral water</div>
+        <div class="overlay">
+            <h3>Mineral water</h3>
+            <p class="ingredients">Pure and refreshing, served chilled.</p>
+        </div>
+    </div>
+    <div class="menu-item">
+        <img src="https://dinnerthendessert.com/wp-content/uploads/2025/06/Lemonade-Recipe-10.jpg" alt="Homemade Lemonade">
+        <div class="item-name">Homemade lemonade</div>
+        <div class="overlay">
+            <h3>Homemade lemonade</h3>
+            <p class="ingredients">Freshly squeezed lemons with a touch of sweetness.</p>
+        </div>
+    </div>
+</div>
+
+<footer style="text-align: center; margin-top: 50px; color: #888; font-size: 0.8rem; padding-bottom: 20px;">
+    &copy; 2026 La Bonne Cuisine - High Quality Dining
+</footer>
+
+</body>
+</html>
